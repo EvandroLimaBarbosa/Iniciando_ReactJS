@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function item(props) {
+export default function item({noticias, title, coment,}) {
   return (
     <Card
       sx={{
@@ -17,15 +17,15 @@ export default function item(props) {
     >
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          {props.noticias}
+          {noticias}
         </Typography>
         <Typography variant="h5" component="div">
-          {props.title}
+          {title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           bla bla bla
         </Typography>
-        <Typography variant="body2">{props.coment}</Typography>
+        <Typography variant="body2">{coment}</Typography>
       </CardContent>
       <CardActions>
         <Button sx={{ color: "blue", fontWeight: "bold" }} size="small">
