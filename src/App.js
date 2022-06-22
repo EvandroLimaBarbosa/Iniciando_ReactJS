@@ -1,23 +1,28 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Item from "./item";
+// import Item from "./item";
+import React, { useEffect, useState } from "react";
 
 function App() {
-  var num = 0;
-  return (
-    <div className="App">
-      <h1>{num}</h1>
-      <h2>vraaau</h2>
-      <Item/>
-      <Item/>
-      <Item/>
-      <Item/>
-      <Item/>
-      <Item/>
-      <Item/>
-    </div>
-    
+  const [contador, setContador] = useState(0)
+  // var noticias = [
+  //   { titulo: "Times", sub: "tempos" },
+  //   { titulo: "Globo", sub: "mundo" },
+  //   { titulo: "Extra", sub: "plus" },
+  //   { titulo: "Correio", sub: "carteiro" },
+  //   { titulo: "SBT", sub: "silvio Santos" },
+  // ];
 
+  function adicionar () {
+    setContador(contador+1)
+  }
+  return (
+    <div>
+      <h1>{contador}</h1>
+      {/* {noticias.map((noticia, key) => (
+        <Item key={key} title={noticia.titulo} noticias={noticia.sub} />
+      ))} */}
+      <button onClick={adicionar}>Aumentar</button>
+    </div>
   );
 }
 
