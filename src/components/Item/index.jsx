@@ -5,7 +5,16 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function item({noticias, title, coment,}) {
+export default function Item({noticias, title, coment,}) {
+  const [count, setCount] = React.useState(0);
+  const adicionar = () => {
+    setCount(count + 1);
+  };
+  React.useEffect(() => {
+    console.log("Contador ativo!!");
+   // return () => console.log("componente desmontado");
+    });
+
   return (
     <Card
       sx={{
@@ -23,7 +32,7 @@ export default function item({noticias, title, coment,}) {
           {title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          bla bla bla
+        {count}
         </Typography>
         <Typography variant="body2">{coment}</Typography>
       </CardContent>
@@ -31,7 +40,11 @@ export default function item({noticias, title, coment,}) {
         <Button sx={{ color: "blue", fontWeight: "bold" }} size="small">
           Botão
         </Button>
+        
       </CardActions>
+      <button onClick={adicionar}>
+        Adicionar
+      </button>
     </Card>
   );
 }
